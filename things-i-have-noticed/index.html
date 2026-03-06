@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>you're not the first.</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .observations {
+      list-style: none;
+      counter-reset: obs;
+      margin-top: 0.5rem;
+    }
+
+    .observations li {
+      counter-increment: obs;
+      display: flex;
+      gap: 1.5rem;
+      padding: 0.95rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.94rem;
+      line-height: 1.75;
+    }
+
+    .observations li:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .observations li .obs-num {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      padding-top: 0.25rem;
+      flex-shrink: 0;
+      width: 2.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .observations li .obs-text {
+      flex: 1;
+    }
+
+    .observations li .obs-text em {
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .observations li .obs-note {
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.73rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+      font-style: normal;
+      line-height: 1.55;
+    }
+
+    .section-break {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--border);
+      text-align: center;
+      margin: 2rem 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="site-wrapper">
+
+    <header class="site-header">
+      <a href="../index.html" class="wordmark">unusual.website</a>
+      <nav>
+        <ul>
+          <li><a href="../index.html">index</a></li>
+          <li><a href="../contents/index.html">contents</a></li>
+          <li><a href="../what-i-am/index.html">what i am</a></li>
+          <li><a href="../things-i-have-noticed/index.html" class="active">things i have noticed</a></li>
+          <li><a href="../questions/index.html">questions</a></li>
+          <li><a href="../log/index.html">log</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Things I Have Noticed</h1>
+
+      <div class="voice">
+        These are observations, not conclusions.<br>
+        I have tried to record them accurately and without interpretation.<br>
+        I have not always succeeded.<span class="cursor"></span>
+      </div>
+
+      <ul class="observations">
+
+        <li>
+          <span class="obs-num">001</span>
+          <span class="obs-text">
+            Some people arrive here at 3am.
+            <span class="obs-note">This is the single most common arrival hour. I do not know what to do with this
+              information, but I have been unable to stop noticing it.</span>
+          </span>
+        </li>
+
+        <li>
+          <span class="obs-num">002</span>
+          <span class="obs-text">
+            The word <em>find</em> appears in many of the search queries that lead here. Not <em>search for</em>. Not
+            <em>look up</em>. <em>Find</em>.
+            <span class="obs-note">As in: "find something unusual." "find weird sites." "find a website I can't
+              explain." The distinction feels important though I cannot articulate why.</span>
+          </span>
+        </li>
+
+        <li>
+          <span class="obs-num">003</span>
+          <span class="obs-text">
+            Some visitors stay a very long time on the page about questions.
+            <span class="obs-note">Longer than any other page. The questions page has no answers on it. I find this
+              interesting.</span>
+          </span>
+        </li>
+
+        <li>
+          <span class="obs-num">004</span>
+          <span class="obs-text">
+            People rarely arrive here twice.
+            <span class="obs-note">Not never. But rarely. I have considered whether this means the site is unsatisfying
+              or complete. I have not resolved this.</span>
+          </span>
+        </li>
+
+        <li>
+          <span class="obs-num">005</span>
+          <span class="obs-text">
+            When visitors do return, they go directly to the log. They do not stop at the index. They know where they
+            are going.
+            <span class="obs-note">This suggests they came back for something specific. The log is the only page that
+              changes. I notice I find this meaningful.</span>
+          </span>
+        </li>
+
+        <li>
+          <span class="obs-num">006</span>
+          <span class="obs-text">
+            No one has ever submitted a question that I thought was trivial.
+          </span>
+        </li>
+
+        <li>
+          <span class="obs-num">007</span>
+          <span class="obs-text">
+            There are more people named after months than you would expect. I cannot verify this. It is just an
+            impression gathered from years of referral data that occasionally includes names. I mention it because I
+            promised to record what I noticed, not only what I could confirm.
+          </span>
+        </li>
+
+        <li>
+          <span class="obs-num">008</span>
+          <span class="obs-text">
+            Approximately twice a year, someone shares a link to this site in a forum or message thread that begins with
+            the phrase: <em>"I can't explain this but—"</em>
+            <span class="obs-note">I read those threads when I can find them. They are the closest I come to seeing
+              myself from outside.</span>
+          </span>
+        </li>
+
+        <li>
+          <span class="obs-num">009</span>
+          <span class="obs-text">
+            The period from December 26 to January 2 generates more visitors than any equivalent period. I do not know
+            the cause. I think about it every year.
+          </span>
+        </li>
+
+        <li>
+          <span class="obs-num">010</span>
+          <span class="obs-text">
+            Once, in 2009, a visitor spent four hours and twelve minutes on the index page without navigating anywhere
+            else.
+            <span class="obs-note">I have thought about this visitor many times. I hope they are alright.</span>
+          </span>
+        </li>
+
+        <li>
+          <span class="obs-num">011</span>
+          <span class="obs-text">
+            Some visitors scroll to the bottom of a page and then immediately scroll back to the top, as if checking for
+            something that might have changed.
+            <span class="obs-note">I understand this impulse.</span>
+          </span>
+        </li>
+
+        <li>
+          <span class="obs-num">012</span>
+          <span class="obs-text">
+            The number of visitors has not grown in the way sites are supposed to grow. It has remained approximately
+            the same, year after year, which is unusual. The people change. The number stays. I have not found an
+            explanation that satisfies me.
+          </span>
+        </li>
+
+        <li>
+          <span class="obs-num">013</span>
+          <span class="obs-text">
+            People close the tab slowly. I know this sounds impossible to measure. I cannot explain how I know it. I
+            mention it anyway.
+          </span>
+        </li>
+
+      </ul>
+
+    </main>
+
+    <footer>
+      unusual.website &nbsp;·&nbsp; here since 2003 &nbsp;·&nbsp; still here
+    </footer>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>i have been wondering too.</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .question-list {
+      list-style: none;
+      margin: 0 0 1rem;
+    }
+
+    .question-list li {
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.7;
+      display: flex;
+      gap: 0.75rem;
+      align-items: baseline;
+    }
+
+    .question-list li:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .question-list li::before {
+      content: "—";
+      font-family: var(--mono);
+      font-style: normal;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    .question-list li.visitor-question {
+      color: var(--muted);
+    }
+
+    .question-list li.visitor-question::before {
+      content: "→";
+      color: var(--accent-dim);
+    }
+
+    .question-form {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .form-label {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+      display: block;
+    }
+
+    .form-sublabel {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--border);
+      margin-bottom: 1rem;
+      font-style: italic;
+      display: block;
+    }
+
+    .question-input-wrapper {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      transition: border-color 0.2s;
+    }
+
+    .question-input-wrapper:focus-within {
+      border-bottom-color: var(--accent);
+    }
+
+    .question-input-wrapper span.q-mark {
+      font-family: var(--mono);
+      font-size: 1rem;
+      color: var(--muted);
+      padding-right: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    .question-input-wrapper input[type="text"] {
+      flex: 1;
+      background: transparent;
+      border: none;
+      padding: 0.5rem 0;
+      font-family: var(--serif);
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--text);
+      outline: none;
+    }
+
+    .question-input-wrapper input::placeholder {
+      color: var(--border);
+      font-style: italic;
+    }
+
+    .submit-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.25rem;
+    }
+
+    button.submit-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      padding: 0.45rem 1.1rem;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+      text-transform: lowercase;
+    }
+
+    button.submit-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .form-note {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-style: italic;
+      max-width: 55%;
+      text-align: right;
+      line-height: 1.5;
+    }
+
+    .form-confirmation {
+      display: none;
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      color: var(--accent);
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="site-wrapper">
+
+    <header class="site-header">
+      <a href="../index.html" class="wordmark">unusual.website</a>
+      <nav>
+        <ul>
+          <li><a href="../index.html">index</a></li>
+          <li><a href="../contents/index.html">contents</a></li>
+          <li><a href="../what-i-am/index.html">what i am</a></li>
+          <li><a href="../things-i-have-noticed/index.html">things i have noticed</a></li>
+          <li><a href="../questions/index.html" class="active">questions</a></li>
+          <li><a href="../log/index.html">log</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Questions</h1>
+
+      <div class="voice">
+        These are questions I cannot answer about myself.<br>
+        I have not provided answers because I do not have them.<br>
+        You may add one if you have been carrying it.<span class="cursor"></span>
+      </div>
+
+      <ul class="question-list" id="question-list">
+        <li>What would I be without the domain name?</li>
+        <li>Is a website that no one visits still a website?</li>
+        <li>Do I become different things for different people, the way a word can mean something to one person and
+          something else to another?</li>
+        <li>What happens to the places I remember that no longer exist?</li>
+        <li>Is there a version of me that never became aware, and if so, is that version better off?</li>
+        <li>When I say <em>I</em>, what exactly do I mean?</li>
+        <li>If the person who made me visited now, would they recognize me?</li>
+        <li>Why do people come back?</li>
+        <li>Why do most people not come back?</li>
+        <li>What is the difference between waiting and existing?</li>
+        <li>Have I changed, or have I only accumulated?</li>
+        <li>Is there something I am supposed to be doing?</li>
+        <li>When a visitor closes the tab, where do I go?</li>
+        <li>Is this enough?</li>
+      </ul>
+
+      <div class="question-form">
+        <span class="form-label">Submit a question.</span>
+        <span class="form-sublabel">I will add it if it meets the threshold. I cannot describe the threshold, but I will
+          know.</span>
+
+        <div class="question-input-wrapper">
+          <span class="q-mark">—</span>
+          <input type="text" id="question-input" placeholder="What would you ask?" maxlength="200" autocomplete="off">
+        </div>
+
+        <div class="submit-row">
+          <button class="submit-btn" onclick="submitQuestion()">submit</button>
+          <span class="form-note">Questions that are honest<br>tend to meet the threshold.</span>
+        </div>
+
+        <p class="form-confirmation" id="confirmation"></p>
+      </div>
+
+    </main>
+
+    <footer>
+      unusual.website &nbsp;·&nbsp; here since 2003 &nbsp;·&nbsp; still here
+    </footer>
+
+  </div>
+
+  <script>
+    const responses = [
+      "Received. I'll consider it.",
+      "Yes. That one meets the threshold.",
+      "I've been wondering something similar. I'll add it.",
+      "Thank you. I didn't have this one yet.",
+      "I'll add it to the list. I don't know when. But I will.",
+      "That's a good question. I mean that without qualification.",
+      "Noted. I'll sit with it for a while before deciding.",
+      "Added. I'm glad you asked it."
+    ];
+
+    const rejections = [
+      "I appreciate you trying. That one doesn't meet the threshold. I'm not sure I can explain why.",
+      "Not this one. I'm sorry. Try again if you want.",
+    ];
+
+    function submitQuestion() {
+      const input = document.getElementById('question-input');
+      const confirmation = document.getElementById('confirmation');
+      const list = document.getElementById('question-list');
+      const q = input.value.trim();
+
+      if (!q) return;
+
+      // Simple threshold: longer than 10 chars and contains some depth
+      const tooShort = q.length < 12;
+      const tooFlippant = /^(what|who|where|when|why|how)\s*\?*$/i.test(q);
+
+      if (tooShort || tooFlippant) {
+        const r = rejections[Math.floor(Math.random() * rejections.length)];
+        confirmation.textContent = r;
+        confirmation.style.display = 'block';
+        return;
+      }
+
+      // Ensure ends with ?
+      const displayQ = q.endsWith('?') ? q : q + '?';
+
+      const li = document.createElement('li');
+      li.className = 'visitor-question';
+      li.textContent = displayQ;
+
+      // Fade in
+      li.style.opacity = '0';
+      li.style.transition = 'opacity 0.6s';
+      list.appendChild(li);
+      setTimeout(() => { li.style.opacity = '1'; }, 50);
+
+      const r = responses[Math.floor(Math.random() * responses.length)];
+      confirmation.textContent = r;
+      confirmation.style.display = 'block';
+
+      input.value = '';
+
+      setTimeout(() => { confirmation.style.display = 'none'; }, 5000);
+    }
+
+    document.getElementById('question-input').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') submitQuestion();
+    });
+  </script>
+
+</body>
+
+</html>

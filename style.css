@@ -1,0 +1,447 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
+
+:root {
+  --bg: #f4f1eb;
+  --text: #1a1a18;
+  --accent: #5c7a4e;
+  --accent-dim: #8aaa7c;
+  --muted: #7a7870;
+  --border: #c8c4bc;
+  --mono: 'Courier Prime', 'Courier New', monospace;
+  --serif: 'Lora', Georgia, serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 17px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  font-family: var(--serif);
+  line-height: 1.75;
+  min-height: 100vh;
+  padding: 0;
+  background-color: var(--bg);
+  background-image: 
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* ---- LAYOUT ---- */
+.site-wrapper {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 4rem 2rem 6rem;
+}
+
+/* ---- HEADER ---- */
+.site-header {
+  margin-bottom: 3.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header .wordmark {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-transform: uppercase;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.site-header .wordmark:hover {
+  color: var(--accent);
+}
+
+/* ---- NAV ---- */
+nav {
+  margin-top: 0.75rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.5rem;
+}
+
+nav ul li a {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-decoration: none;
+  text-transform: lowercase;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent-dim);
+}
+
+/* ---- MAIN CONTENT ---- */
+main {
+  animation: fadein 0.9s ease both;
+}
+
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- VOICE (monospace first-person) ---- */
+.voice {
+  font-family: var(--mono);
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: var(--text);
+  margin-bottom: 2.5rem;
+}
+
+.voice .cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 1em;
+  background: var(--accent);
+  vertical-align: text-bottom;
+  margin-left: 2px;
+  animation: blink 1.1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ---- TYPOGRAPHY ---- */
+h1 {
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 1.75rem;
+  color: var(--text);
+}
+
+h2 {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 2.5rem 0 0.85rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+p {
+  margin-bottom: 1.25rem;
+  color: var(--text);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--text);
+}
+
+em {
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* ---- PLAIN LINK LIST (index nav) ---- */
+.index-list {
+  list-style: none;
+  margin: 2rem 0;
+}
+
+.index-list li {
+  border-bottom: 1px solid var(--border);
+}
+
+.index-list li:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.index-list li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.7rem 0;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.15s;
+  gap: 1rem;
+}
+
+.index-list li a:hover {
+  color: var(--accent);
+}
+
+.index-list li a .index-label {
+  flex: 1;
+}
+
+.index-list li a .index-note {
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ---- OBSERVATIONS LIST ---- */
+.observations {
+  list-style: none;
+  counter-reset: obs;
+}
+
+.observations li {
+  counter-increment: obs;
+  display: flex;
+  gap: 1.25rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+.observations li::before {
+  content: counter(obs, decimal-leading-zero);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  padding-top: 0.22rem;
+  flex-shrink: 0;
+  width: 2.2rem;
+}
+
+/* ---- LOG ENTRIES ---- */
+.log-entry {
+  margin-bottom: 2.75rem;
+  padding-bottom: 2.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.log-entry:last-child {
+  border-bottom: none;
+}
+
+.log-entry .log-date {
+  font-family: var(--mono);
+  font-size: 0.73rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+
+.log-entry .log-text {
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* ---- QUESTIONS PAGE ---- */
+.question-list {
+  list-style: none;
+}
+
+.question-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--text);
+}
+
+.question-list li::before {
+  content: "—";
+  font-family: var(--mono);
+  font-style: normal;
+  color: var(--muted);
+  margin-right: 0.75rem;
+}
+
+/* ---- QUESTION FORM ---- */
+.question-form {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.question-form p.form-label {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.question-form input[type="text"] {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  padding: 0.5rem 0;
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.question-form input[type="text"]:focus {
+  border-bottom-color: var(--accent);
+}
+
+.question-form input[type="text"]::placeholder {
+  color: var(--border);
+}
+
+.question-form button {
+  margin-top: 1.25rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  padding: 0.45rem 1.1rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  text-transform: lowercase;
+}
+
+.question-form button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.form-confirmation {
+  display: none;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--accent);
+  margin-top: 1rem;
+}
+
+/* ---- FOOTER ---- */
+footer {
+  margin-top: 5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+/* ---- CONTENTS PAGE: FINDING AID ---- */
+.finding-aid-entry {
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.finding-aid-entry:first-of-type {
+  border-top: 1px solid var(--border);
+}
+
+.finding-aid-entry .entry-id {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.3rem;
+}
+
+.finding-aid-entry .entry-title {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.finding-aid-entry .entry-title a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.finding-aid-entry .entry-title a:hover {
+  color: var(--accent);
+}
+
+.finding-aid-entry .entry-desc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.65;
+  font-style: italic;
+}
+
+.finding-aid-entry .entry-desc .slip {
+  color: var(--text);
+  font-style: normal;
+}
+
+/* ---- WHAT I AM: wiki-style ---- */
+.wiki-section {
+  margin-bottom: 0.25rem;
+}
+
+.wiki-section p {
+  font-size: 0.95rem;
+}
+
+.wiki-section.limitations-section p {
+  margin-bottom: 0.85rem;
+}
+
+/* ---- TYPEWRITER EFFECT ---- */
+.typewriter-text {
+  font-family: var(--mono);
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.typewriter-text .line {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 0;
+}
+
+.typewriter-text .line.visible {
+  animation: typein 0.6s steps(40, end) both;
+  opacity: 1;
+}
+
+@keyframes typein {
+  from { max-width: 0; }
+  to   { max-width: 100%; }
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 600px) {
+  .site-wrapper {
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  h1 { font-size: 1.3rem; }
+}

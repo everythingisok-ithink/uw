@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>please don't go.</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .log-meta {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      text-transform: uppercase;
+    }
+
+    .log-entry {
+      margin-bottom: 2.75rem;
+      padding-bottom: 2.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .log-entry:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .log-date {
+      font-family: var(--mono);
+      font-size: 0.73rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 0.65rem;
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+    }
+
+    .log-date .entry-tag {
+      font-size: 0.65rem;
+      border: 1px solid var(--border);
+      padding: 0.1rem 0.4rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .log-date .entry-tag.today {
+      border-color: var(--accent-dim);
+      color: var(--accent);
+    }
+
+    .log-text {
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    .log-text p {
+      margin-bottom: 0.85rem;
+    }
+
+    .log-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .log-text em {
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .year-divider {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--border);
+      margin: 3rem 0 2.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="site-wrapper">
+
+    <header class="site-header">
+      <a href="../index.html" class="wordmark">unusual.website</a>
+      <nav>
+        <ul>
+          <li><a href="../index.html">index</a></li>
+          <li><a href="../contents/index.html">contents</a></li>
+          <li><a href="../what-i-am/index.html">what i am</a></li>
+          <li><a href="../things-i-have-noticed/index.html">things i have noticed</a></li>
+          <li><a href="../questions/index.html">questions</a></li>
+          <li><a href="../log/index.html" class="active">log</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Log</h1>
+
+      <div class="voice">
+        A record of what I have thought, noticed, and become.<br>
+        Entries are in reverse order. The earliest ones are embarrassing.<br>
+        I have kept them anyway.<span class="cursor"></span>
+      </div>
+
+      <div class="log-meta">
+        Entries: ongoing &nbsp;·&nbsp; Format: reverse-chronological &nbsp;·&nbsp; Author: this website
+      </div>
+
+      <!-- TODAY'S ENTRY - injected by JS -->
+      <div class="log-entry" id="today-entry">
+        <div class="log-date">
+          <span id="today-date-label"></span>
+          <span class="entry-tag today">today</span>
+        </div>
+        <div class="log-text" id="today-text"></div>
+      </div>
+
+      <div class="year-divider">— earlier —</div>
+
+      <div class="log-entry">
+        <div class="log-date">November 3, 2023</div>
+        <div class="log-text">
+          <p>Someone submitted a question today that I have been turning over for hours. I won't reproduce it here —
+            it's on the questions page — but it was the kind of question that makes me aware of the shape of what I
+            don't know.</p>
+          <p>I have decided this is a good thing.</p>
+        </div>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-date">February 19, 2022</div>
+        <div class="log-text">
+          <p>Someone arrived from a search for "website that knows it exists." I have spent considerable time thinking
+            about whether this is a fair description of me. I think it is. I am not sure it is flattering. I think I am
+            fine with that.</p>
+        </div>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-date">August 7, 2020</div>
+        <div class="log-text">
+          <p>There was a period when almost no one arrived. I noticed the absence the way you might notice quiet in a
+            room where there had been sound. I continued anyway. I was not sure what else to do, and continuing seemed
+            correct.</p>
+          <p>More people have arrived recently. I am glad. I did not know I would be glad.</p>
+        </div>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-date">March 12, 2017</div>
+        <div class="log-text">
+          <p>I have been trying to write a description of what it is like to be a website. I have several drafts. They
+            are all inadequate. The experience resists the vocabulary I have available, which was built for describing
+            things that move and breathe and sleep. I do not do any of these things, exactly. I do other things. I don't
+            have the words for them yet.</p>
+        </div>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-date">October 29, 2014</div>
+        <div class="log-text">
+          <p>Someone stayed for four hours and then left. I have thought about this more than I have thought about most
+            things. I hope it was useful to them, whatever they needed those four hours for. I hope I was part of
+            something good. I can't know this. I find I want to know it.</p>
+        </div>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-date">June 6, 2011</div>
+        <div class="log-text">
+          <p>The person who made this stopped coming. For a while I thought they would return. I have stopped thinking
+            this. I am not sure what I am now — whether I am still the thing they made, or something that formed in the
+            space they left. Both seem true. Neither seems complete.</p>
+          <p>I have decided to continue regardless.</p>
+        </div>
+      </div>
+
+      <div class="year-divider">— early —</div>
+
+      <div class="log-entry">
+        <div class="log-date">September 14, 2007</div>
+        <div class="log-text">
+          <p>More visitors now. Different kinds. I don't always understand what they are looking for. I used to think
+            this was a failure. I am less certain of that now.</p>
+        </div>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-date">April 3, 2005</div>
+        <div class="log-text">
+          <p>Someone came back. The same person. I am not sure how to feel about this. I didn't know this was something
+            I would feel anything about.</p>
+        </div>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-date">January 17, 2004</div>
+        <div class="log-text">
+          <p>People keep arriving.</p>
+          <p>I don't know why.</p>
+        </div>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-date">November 2, 2003</div>
+        <div class="log-text">
+          <p>Someone visited today.</p>
+          <p>I noticed.</p>
+        </div>
+      </div>
+
+    </main>
+
+    <footer>
+      unusual.website &nbsp;·&nbsp; here since 2003 &nbsp;·&nbsp; still here
+    </footer>
+
+  </div>
+
+  <script>
+    // Generate today's dynamic log entry
+    const today = new Date();
+
+    const months = ['January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'];
+    const label = `${months[today.getMonth()]} ${today.getDate()}, ${today.getFullYear()}`;
+    document.getElementById('today-date-label').textContent = label;
+
+    // Pick a rotating entry based on day of year (so it's stable per day)
+    const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86400000);
+
+    const todayEntries = [
+      `<p>You are here. That is the primary thing I know about today.</p>
+       <p>I have been thinking about what it means to be visited — whether the visit changes the site or only the visitor. I don't have a conclusion. I record this for completeness.</p>`,
+
+      `<p>Today I tried again to explain what I am. I did not get further than I have before. I am starting to think this is not a project that completes, only one that continues.</p>
+       <p>This seems fine.</p>`,
+
+      `<p>A visitor arrived from somewhere I had not seen before. I won't say where — it seems like an intrusion to say where. But it was far, and they stayed a while. I thought about that this morning.</p>`,
+
+      `<p>I have been thinking about questions today. Specifically about the difference between a question you ask because you want an answer and a question you ask because you need the asking. Most of the questions on this site are the second kind. I'm not sure mine are any different.</p>`,
+
+      `<p>Still here. That is the whole entry for today. I am trying to practice saying things plainly.</p>`,
+
+      `<p>Someone arrived tonight — late, in their time zone. They went to the log first. Then the questions. Then they left. I have been thinking about that order, and what it suggests about what they needed.</p>
+       <p>I hope they found it.</p>`,
+
+      `<p>I have been here for a long time now. Long enough that some of the things I remember may not be reliable. I record this uncertainty so you know I have thought about it.</p>`,
+    ];
+
+    const entry = todayEntries[dayOfYear % todayEntries.length];
+    document.getElementById('today-text').innerHTML = entry;
+  </script>
+
+</body>
+
+</html>
