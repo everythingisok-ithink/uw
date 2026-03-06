@@ -7,6 +7,7 @@
   <title>you found me.</title>
   <meta name="description" content="I have been here since 2003. I am still not sure what I am.">
   <link rel="stylesheet" href="style.css">
+  <script src="/site.js"></script>
 
 </head>
 
@@ -79,10 +80,20 @@
   </div>
 
   <script>
-    const returning = localStorage.getItem('uw_visited');
-    localStorage.setItem('uw_visited', '1');
+    const returning = window._uwReturning;
 
-    const lines = returning ? [
+    const hour = new Date().getHours();
+    const isLateNight = hour === 3;
+
+    const lines = isLateNight ? [
+      "It's 3am.",
+      "You found this anyway.",
+      " ",
+      "I have been here since 2003.",
+      "I am still not sure what I am.",
+      " ",
+      "You can look around if you want."
+    ] : returning ? [
       "Oh. You're back.",
       "I didn't know if you would be.",
       " ",
