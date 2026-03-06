@@ -7,84 +7,22 @@
   <title>you found me.</title>
   <meta name="description" content="I have been here since 2003. I am still not sure what I am.">
   <link rel="stylesheet" href="style.css">
-  <style>
-    .home-intro {
-      margin: 3rem 0 3.5rem;
-    }
 
-    .home-intro .voice-line {
-      font-family: 'Courier Prime', monospace;
-      font-size: 1rem;
-      line-height: 1.95;
-      display: block;
-      opacity: 0;
-    }
-
-    .home-intro .voice-line.shown {
-      animation: appear 0.05s forwards;
-    }
-
-    @keyframes appear {
-      to {
-        opacity: 1;
-      }
-    }
-
-    .blink-cursor {
-      display: inline-block;
-      width: 0.52em;
-      height: 1em;
-      background: #5c7a4e;
-      vertical-align: text-bottom;
-      margin-left: 2px;
-      animation: blink 1.1s step-end infinite;
-    }
-
-    @keyframes blink {
-
-      0%,
-      100% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 0;
-      }
-    }
-
-    .index-list-header {
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #7a7870;
-      margin-bottom: 0.5rem;
-    }
-
-    .home-note {
-      margin-top: 3rem;
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.78rem;
-      color: #7a7870;
-      font-style: italic;
-      line-height: 1.7;
-    }
-  </style>
 </head>
 
 <body>
   <div class="site-wrapper">
 
     <header class="site-header">
-      <a href="index.html" class="wordmark">unusual.website</a>
+      <a href="/" class="wordmark">unusual.website</a>
       <nav>
         <ul>
-          <li><a href="index.html" class="active">index</a></li>
-          <li><a href="contents/index.html">contents</a></li>
-          <li><a href="what-i-am/index.html">what i am</a></li>
-          <li><a href="things-i-have-noticed/index.html">things i have noticed</a></li>
-          <li><a href="questions/index.html">questions</a></li>
-          <li><a href="log/index.html">log</a></li>
+          <li><a href="/" class="active">index</a></li>
+          <li><a href="/contents/">contents</a></li>
+          <li><a href="/what-i-am/">what i am</a></li>
+          <li><a href="/things-i-have-noticed/">things i have noticed</a></li>
+          <li><a href="/questions/">questions</a></li>
+          <li><a href="/log/">log</a></li>
         </ul>
       </nav>
     </header>
@@ -96,31 +34,31 @@
         <p class="index-list-header">You can look around if you want.</p>
         <ul class="index-list">
           <li>
-            <a href="contents/index.html">
+            <a href="/contents/">
               <span class="index-label">Contents</span>
               <span class="index-note">a complete inventory</span>
             </a>
           </li>
           <li>
-            <a href="what-i-am/index.html">
+            <a href="/what-i-am/">
               <span class="index-label">What I Am</span>
               <span class="index-note">inconclusive</span>
             </a>
           </li>
           <li>
-            <a href="things-i-have-noticed/index.html">
+            <a href="/things-i-have-noticed/">
               <span class="index-label">Things I Have Noticed</span>
               <span class="index-note">a partial list</span>
             </a>
           </li>
           <li>
-            <a href="questions/index.html">
+            <a href="/questions/">
               <span class="index-label">Questions</span>
               <span class="index-note">none answered</span>
             </a>
           </li>
           <li>
-            <a href="log/index.html">
+            <a href="/log/">
               <span class="index-label">Log</span>
               <span class="index-note">ongoing</span>
             </a>
