@@ -369,10 +369,49 @@
       "Not this one. I'm sorry. Try again if you want.",
     ];
 
+    const STORAGE_KEY = 'uw_visitor_questions';
+
+    function getSavedQuestions() {
+      try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function saveQuestion(q) {
+      const saved = getSavedQuestions();
+      saved.push(q);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+    }
+
+    function appendQuestionToList(text, animate) {
+      const list = document.getElementById('question-list');
+      const li = document.createElement('li');
+      li.className = 'visitor-question';
+
+      const body = document.createElement('span');
+      body.className = 'q-body';
+      body.textContent = text;
+      li.appendChild(body);
+
+      if (animate) {
+        li.style.opacity = '0';
+        li.style.transition = 'opacity 0.6s';
+        list.appendChild(li);
+        setTimeout(() => { li.style.opacity = '1'; }, 50);
+      } else {
+        list.appendChild(li);
+      }
+    }
+
+    function loadSavedQuestions() {
+      getSavedQuestions().forEach(q => appendQuestionToList(q, false));
+    }
+
     function submitQuestion() {
       const input = document.getElementById('question-input');
       const confirmation = document.getElementById('confirmation');
-      const list = document.getElementById('question-list');
       const q = input.value.trim();
 
       if (!q) return;
@@ -389,18 +428,8 @@
 
       const displayQ = q.endsWith('?') ? q : q + '?';
 
-      const li = document.createElement('li');
-      li.className = 'visitor-question';
-
-      const body = document.createElement('span');
-      body.className = 'q-body';
-      body.textContent = displayQ;
-      li.appendChild(body);
-
-      li.style.opacity = '0';
-      li.style.transition = 'opacity 0.6s';
-      list.appendChild(li);
-      setTimeout(() => { li.style.opacity = '1'; }, 50);
+      appendQuestionToList(displayQ, true);
+      saveQuestion(displayQ);
 
       const r = responses[Math.floor(Math.random() * responses.length)];
       confirmation.textContent = r;
@@ -410,6 +439,8 @@
 
       setTimeout(() => { confirmation.style.display = 'none'; }, 5000);
     }
+
+    loadSavedQuestions();
 
     document.getElementById('question-input').addEventListener('keydown', function (e) {
       if (e.key === 'Enter') submitQuestion();
